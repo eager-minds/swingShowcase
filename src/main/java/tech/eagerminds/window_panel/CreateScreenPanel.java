@@ -14,7 +14,7 @@ public class CreateScreenPanel extends JPanel {
 
         final JLabel statusLabel = new JLabel("", SwingConstants.CENTER);
         final JPanel loginPanel = this.createLoginGridBagPanel(statusLabel::setText);
-        final JButton goListButton = new RouteJButton("Go to Main", this, MainScreenPanel.class);
+        final JButton goListButton = new RouteJButton(LITERAL.GO_TO_MAIN_BUTTON, this, MainScreenPanel.class);
 
         this.add(loginPanel, BorderLayout.NORTH);
         this.add(statusLabel, BorderLayout.CENTER);
