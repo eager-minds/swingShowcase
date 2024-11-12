@@ -1,5 +1,6 @@
 package tech.eagerminds.window_panel;
 
+import tech.eagerminds.component.RouteJButton;
 import tech.eagerminds.listener.SwitchWindowPanelListener;
 
 import javax.swing.*;
@@ -9,9 +10,7 @@ public class ListScreenPanel extends JPanel {
 
 	public ListScreenPanel() {
 		this.setLayout(new BorderLayout());
-		final JButton goListButton = new JButton("Go to Main");
-		this.add(goListButton, BorderLayout.SOUTH);
-		goListButton.addActionListener(new SwitchWindowPanelListener(this, MainScreenPanel.class));
+		this.add(new RouteJButton("Go to Main", this, MainScreenPanel.class), BorderLayout.SOUTH);
 	}
 
 }
