@@ -1,5 +1,7 @@
 package tech.eagerminds.listener;
 
+import tech.eagerminds.exception.ConstructorException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -23,8 +25,9 @@ public class SwitchWindowPanelListener implements ActionListener {
         mainFrame.remove(this.currentPanel);
         try {
             mainFrame.add(this.nextPanelClass.getDeclaredConstructor().newInstance());
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException ex) {
-            throw new RuntimeException(ex);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException ex) {
+            throw new ConstructorException(ex);
         }
         mainFrame.revalidate();
         mainFrame.repaint();
