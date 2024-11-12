@@ -59,18 +59,17 @@ public class CreateScreenPanel extends JPanel {
     private JPanel createLoginGridPanel(Consumer<String> onSubmit) {
         final JPanel loginPanel = new JPanel();
         loginPanel.setLayout(new GridLayout(3, 1));
-        final JLabel nameLabel = new JLabel("User name: ", SwingConstants.RIGHT);
+        final JLabel nameLabel = new JLabel(LITERAL.USERNAME_LABEL, SwingConstants.RIGHT);
         loginPanel.add(nameLabel);
         final JTextField userText = new JTextField(6);
         loginPanel.add(userText);
-        final JLabel passwordLabel = new JLabel("Password: ", SwingConstants.RIGHT);
+        final JLabel passwordLabel = new JLabel(LITERAL.PASSWORD_LABEL, SwingConstants.RIGHT);
         loginPanel.add(passwordLabel);
         final JPasswordField passwordText = new JPasswordField(6);
         loginPanel.add(passwordText);
-        final JButton loginButton = new JButton("Login");
+        final JButton loginButton = new JButton(LITERAL.LOGIN_BUTTON);
         loginButton.addActionListener(e -> {
-            String data = "Username " + userText.getText();
-            data += ", Password: " + new String(passwordText.getPassword());
+            String data = String.format(LITERAL.LOGIN_OUTPUT, userText.getText(), new String(passwordText.getPassword()));
             onSubmit.accept(data);
         });
         loginPanel.add(loginButton);
@@ -85,7 +84,7 @@ public class CreateScreenPanel extends JPanel {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        final JLabel nameLabel = new JLabel("User name: ", SwingConstants.RIGHT);
+        final JLabel nameLabel = new JLabel(LITERAL.USERNAME_LABEL, SwingConstants.RIGHT);
         loginPanel.add(nameLabel, gbc);
 
         gbc.gridx = 1;
@@ -95,7 +94,7 @@ public class CreateScreenPanel extends JPanel {
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        final JLabel passwordLabel = new JLabel("Password: ", SwingConstants.RIGHT);
+        final JLabel passwordLabel = new JLabel(LITERAL.PASSWORD_LABEL, SwingConstants.RIGHT);
         loginPanel.add(passwordLabel, gbc);
 
         gbc.gridx = 1;
@@ -106,10 +105,9 @@ public class CreateScreenPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
-        final JButton loginButton = new JButton("Login");
+        final JButton loginButton = new JButton(LITERAL.LOGIN_BUTTON);
         loginButton.addActionListener(e -> {
-            String data = "Username " + userText.getText();
-            data += ", Password: " + new String(passwordText.getPassword());
+            String data = String.format(LITERAL.LOGIN_OUTPUT, userText.getText(), new String(passwordText.getPassword()));
             onSubmit.accept(data);
         });
         loginPanel.add(loginButton, gbc);

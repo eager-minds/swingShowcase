@@ -9,7 +9,7 @@ public class LITERAL {
     public static final String LOGIN_BUTTON = "Login";
     public static final String GO_TO_LIST_BUTTON = "Go to List";
     public static final String GO_TO_CREATE_BUTTON = "Go to Create";
-    public static final String GO_TO_MAIN_BUTTON = "Go to Main";
+    public static final String GO_TO_MAIN_BUTTON = "GO TO MAIN";
     public static final String LOGIN_OUTPUT = "Username: %s, Password: %s";
 
 }
